@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct QuizBrain {
     var quiz = [
         Question(q: "A slug's blood is green.", a: "True"),
@@ -25,7 +26,9 @@ struct QuizBrain {
     var questionNumber = 0
     var score = 0
     
+    
     mutating func checkAnswer(answer userAnswer: String) -> Bool {
+        
         if userAnswer == quiz[questionNumber].answer {
             score += 1
             return true
@@ -52,9 +55,12 @@ struct QuizBrain {
             score = 0
         }
     }
+    
+    
     func getScore() -> Int {
         return score
     }
+    
     func getQuestion() -> Int {
         return questionNumber
     }
